@@ -165,7 +165,6 @@
         <!--Camera Roll Controller-->
         <scene sceneID="zXU-v5-5c7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G6E-bc-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="J7t-cs-d6Q" customClass="CameraRollController" customModule="CuriousTamer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PmA-Jf-Wod"/>
@@ -216,6 +215,7 @@
                         <outlet property="imageView" destination="9uN-cU-an2" id="lve-rS-U6T"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6E-bc-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pinchGestureRecognizer id="5C1-JX-b19">
                     <connections>
                         <action selector="pinchResponder:" destination="J7t-cs-d6Q" id="9cn-pB-XDv"/>
