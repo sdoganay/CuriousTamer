@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		420469521C259F1A00F70299 /* CameraRollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420469511C259F1A00F70299 /* CameraRollController.swift */; };
-		420469541C259F3A00F70299 /* ImageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420469531C259F3A00F70299 /* ImageDetailController.swift */; };
 		4235DAEF1C21C42D00F5EFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235DAEE1C21C42D00F5EFC6 /* AppDelegate.swift */; };
 		4235DAF11C21C42D00F5EFC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235DAF01C21C42D00F5EFC6 /* ViewController.swift */; };
 		4235DAF41C21C42D00F5EFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4235DAF21C21C42D00F5EFC6 /* Main.storyboard */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		420469511C259F1A00F70299 /* CameraRollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRollController.swift; sourceTree = "<group>"; };
-		420469531C259F3A00F70299 /* ImageDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailController.swift; sourceTree = "<group>"; };
 		4235DAEB1C21C42D00F5EFC6 /* CuriousTamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriousTamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4235DAEE1C21C42D00F5EFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4235DAF01C21C42D00F5EFC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				4235DAF71C21C42D00F5EFC6 /* LaunchScreen.storyboard */,
 				4235DAFA1C21C42D00F5EFC6 /* Info.plist */,
 				420469511C259F1A00F70299 /* CameraRollController.swift */,
-				420469531C259F3A00F70299 /* ImageDetailController.swift */,
 			);
 			path = CuriousTamer;
 			sourceTree = "<group>";
@@ -262,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				420469541C259F3A00F70299 /* ImageDetailController.swift in Sources */,
 				420469521C259F1A00F70299 /* CameraRollController.swift in Sources */,
 				4235DAF11C21C42D00F5EFC6 /* ViewController.swift in Sources */,
 				4235DAEF1C21C42D00F5EFC6 /* AppDelegate.swift in Sources */,

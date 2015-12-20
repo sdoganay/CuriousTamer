@@ -162,10 +162,11 @@
             </objects>
             <point key="canvasLocation" x="673" y="265"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera Roll Controller-->
         <scene sceneID="zXU-v5-5c7">
             <objects>
-                <viewController id="J7t-cs-d6Q" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6E-bc-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="J7t-cs-d6Q" customClass="CameraRollController" customModule="CuriousTamer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PmA-Jf-Wod"/>
                         <viewControllerLayoutGuide type="bottom" id="7Wi-6o-794"/>
@@ -173,13 +174,55 @@
                     <view key="view" contentMode="scaleToFill" id="I8c-8g-i5x">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-cU-an2">
+                                <rect key="frame" x="6" y="285" width="558" height="534"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-YE-36x">
+                                <rect key="frame" x="179" y="390" width="109" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0sp-nB-ADU"/>
+                                    <constraint firstAttribute="height" constant="50" id="1Ab-me-40w"/>
+                                </constraints>
+                                <state key="normal" title="Choose a photo"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0sp-nB-ADU"/>
+                                        <exclude reference="1Ab-me-40w"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="J7t-cs-d6Q" eventType="touchUpInside" id="Bvl-pR-7Qx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9uN-cU-an2" secondAttribute="trailing" constant="1" id="R9d-ax-L6F"/>
+                            <constraint firstItem="9uN-cU-an2" firstAttribute="leading" secondItem="I8c-8g-i5x" secondAttribute="leadingMargin" constant="1" id="VUZ-Hn-lc6"/>
+                            <constraint firstItem="9fX-YE-36x" firstAttribute="centerY" secondItem="I8c-8g-i5x" secondAttribute="centerY" id="aRU-q5-Pdp"/>
+                            <constraint firstItem="9uN-cU-an2" firstAttribute="top" secondItem="PmA-Jf-Wod" secondAttribute="bottom" constant="1" id="lAV-mP-0B5"/>
+                            <constraint firstItem="7Wi-6o-794" firstAttribute="top" secondItem="9uN-cU-an2" secondAttribute="bottom" constant="1" id="w7D-Ip-FI6"/>
+                            <constraint firstItem="9fX-YE-36x" firstAttribute="centerX" secondItem="I8c-8g-i5x" secondAttribute="centerX" id="wVq-bL-UDn"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5C1-JX-b19" appends="YES" id="VcP-od-Srr"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="fMb-mj-P5I"/>
+                    <navigationItem key="navigationItem" id="I0G-PC-LwA"/>
+                    <connections>
+                        <outlet property="chooseButton" destination="9fX-YE-36x" id="ddf-H3-YN4"/>
+                        <outlet property="imageView" destination="9uN-cU-an2" id="lve-rS-U6T"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G6E-bc-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="5C1-JX-b19">
+                    <connections>
+                        <action selector="pinchResponder:" destination="J7t-cs-d6Q" id="9cn-pB-XDv"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="455" y="1141"/>
+            <point key="canvasLocation" x="688" y="1135"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3oL-hW-lRl">
@@ -211,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Spn-pN-MNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="1155"/>
+            <point key="canvasLocation" x="-335" y="1235"/>
         </scene>
     </scenes>
 </document>
