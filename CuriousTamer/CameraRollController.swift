@@ -30,11 +30,7 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
     
     func handleSwipes(sender: UISwipeGestureRecognizer){
         if(imageView.image != nil){
-        if(sender.direction == .Left){
-            print("left")
-        } else  if(sender.direction == .Right){
-            print("right")
-        }
+            imageView.image = UIImage(named: "tentUp")
         }
     }
     
