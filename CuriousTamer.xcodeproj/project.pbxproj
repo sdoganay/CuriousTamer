@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		420469521C259F1A00F70299 /* CameraRollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420469511C259F1A00F70299 /* CameraRollController.swift */; };
 		4210335A1C2F6B4A007F41EC /* scarryClown.gif in Resources */ = {isa = PBXBuildFile; fileRef = 421033591C2F6B4A007F41EC /* scarryClown.gif */; };
-		4210335E1C2F71FC007F41EC /* ScaryScream.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4210335D1C2F71FC007F41EC /* ScaryScream.wav */; };
+		421033601C2FF453007F41EC /* scaryScream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4210335F1C2FF453007F41EC /* scaryScream.mp3 */; };
 		4235DAEF1C21C42D00F5EFC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235DAEE1C21C42D00F5EFC6 /* AppDelegate.swift */; };
 		4235DAF11C21C42D00F5EFC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235DAF01C21C42D00F5EFC6 /* ViewController.swift */; };
 		4235DAF41C21C42D00F5EFC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4235DAF21C21C42D00F5EFC6 /* Main.storyboard */; };
@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		420469511C259F1A00F70299 /* CameraRollController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRollController.swift; sourceTree = "<group>"; };
 		421033591C2F6B4A007F41EC /* scarryClown.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scarryClown.gif; sourceTree = "<group>"; };
-		4210335D1C2F71FC007F41EC /* ScaryScream.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ScaryScream.wav; sourceTree = "<group>"; };
+		4210335F1C2FF453007F41EC /* scaryScream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scaryScream.mp3; sourceTree = "<group>"; };
 		4235DAEB1C21C42D00F5EFC6 /* CuriousTamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuriousTamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4235DAEE1C21C42D00F5EFC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4235DAF01C21C42D00F5EFC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		421033561C2F6B2F007F41EC /* images */ = {
 			isa = PBXGroup;
 			children = (
-				4210335D1C2F71FC007F41EC /* ScaryScream.wav */,
+				4210335F1C2FF453007F41EC /* scaryScream.mp3 */,
 				421033591C2F6B4A007F41EC /* scarryClown.gif */,
 			);
 			name = images;
@@ -250,7 +250,7 @@
 				4235DAF91C21C42D00F5EFC6 /* LaunchScreen.storyboard in Resources */,
 				4235DAF61C21C42D00F5EFC6 /* Assets.xcassets in Resources */,
 				4210335A1C2F6B4A007F41EC /* scarryClown.gif in Resources */,
-				4210335E1C2F71FC007F41EC /* ScaryScream.wav in Resources */,
+				421033601C2FF453007F41EC /* scaryScream.mp3 in Resources */,
 				4235DAF41C21C42D00F5EFC6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

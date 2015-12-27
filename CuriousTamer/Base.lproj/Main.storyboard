@@ -203,11 +203,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <webView contentMode="center" ambiguous="YES" misplaced="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx6-B9-zVW">
+                                <rect key="frame" x="138" y="168" width="262" height="130"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-cU-an2">
-                                <rect key="frame" x="21" y="65" width="558" height="534"/>
+                                <rect key="frame" x="20" y="79" width="558" height="534"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-YE-36x">
-                                <rect key="frame" x="245.5" y="285" width="109" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-YE-36x">
+                                <rect key="frame" x="197" y="249" width="109" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="0sp-nB-ADU"/>
                                     <constraint firstAttribute="height" constant="50" id="1Ab-me-40w"/>
@@ -227,9 +232,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="width" secondItem="I8c-8g-i5x" secondAttribute="width" id="E0X-FT-SlW"/>
+                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="centerY" secondItem="I8c-8g-i5x" secondAttribute="centerY" id="Kez-3w-5Py"/>
+                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="top" relation="lessThanOrEqual" secondItem="PmA-Jf-Wod" secondAttribute="bottom" constant="100" id="Mvr-71-k8l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9uN-cU-an2" secondAttribute="trailing" constant="1" id="R9d-ax-L6F"/>
                             <constraint firstItem="9uN-cU-an2" firstAttribute="leading" secondItem="I8c-8g-i5x" secondAttribute="leadingMargin" constant="1" id="VUZ-Hn-lc6"/>
                             <constraint firstItem="9fX-YE-36x" firstAttribute="centerY" secondItem="I8c-8g-i5x" secondAttribute="centerY" id="aRU-q5-Pdp"/>
+                            <constraint firstItem="7Wi-6o-794" firstAttribute="top" relation="lessThanOrEqual" secondItem="Cx6-B9-zVW" secondAttribute="bottom" constant="100" id="eGh-Ke-mok"/>
+                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="centerX" secondItem="I8c-8g-i5x" secondAttribute="centerX" id="jy2-Fd-ADT"/>
                             <constraint firstItem="9uN-cU-an2" firstAttribute="top" secondItem="PmA-Jf-Wod" secondAttribute="bottom" constant="1" id="lAV-mP-0B5"/>
                             <constraint firstItem="7Wi-6o-794" firstAttribute="top" secondItem="9uN-cU-an2" secondAttribute="bottom" constant="1" id="w7D-Ip-FI6"/>
                             <constraint firstItem="9fX-YE-36x" firstAttribute="centerX" secondItem="I8c-8g-i5x" secondAttribute="centerX" id="wVq-bL-UDn"/>
@@ -242,6 +252,7 @@
                     <connections>
                         <outlet property="chooseButton" destination="9fX-YE-36x" id="ddf-H3-YN4"/>
                         <outlet property="imageView" destination="9uN-cU-an2" id="lve-rS-U6T"/>
+                        <outlet property="webViewBG" destination="Cx6-B9-zVW" id="Wod-rQ-AXD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6E-bc-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>

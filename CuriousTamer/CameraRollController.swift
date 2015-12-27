@@ -10,12 +10,14 @@ import UIKit
 import AVFoundation
 
 class CameraRollController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
- 
     
-    var tune = AVAudioPlayer()
+    var audioPlayer = AVAudioPlayer()
     var leftSwipe : UISwipeGestureRecognizer!
     var rightSwipe : UISwipeGestureRecognizer!
     @IBOutlet weak var chooseButton: UIButton!
+    
+    @IBOutlet weak var webViewBG: UIWebView!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -32,40 +34,39 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func handleSwipes(sender: UISwipeGestureRecognizer){
-//        if(imageView.image != nil){
-//            imageView.image = UIImage(named: "tentUp")
-//            
-//        }
-        imageView = nil
-        let filePath = NSBundle.mainBundle().pathForResource("scarryClown", ofType: ".gif")
-        let scarryGif = NSData(contentsOfFile: filePath!)
-        let webViewBG = UIWebView(frame: self.view.frame)
-        webViewBG.loadData(scarryGif!, MIMEType: "image/gif", textEncodingName: String(), baseURL: NSURL())
-        webViewBG.userInteractionEnabled = false;
-        //
-//        let screamSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ScaryScream", ofType: "wav")!)
-//        var audioPlayer = AVAudioPlayer()
-//        do {
-//            try audioPlayer = AVAudioPlayer(contentsOfURL: screamSound, fileTypeHint: nil)
-//            audioPlayer.prepareToPlay()
-//        } catch {
-//            print("Something went wrong!")
-//        }
+        imageView.image = nil
+        prepareScaryGif()
+        prepareScarySound()
         
-        //
-//        audioPlayer.play()
-        /////---------
-        let tuneURL : NSURL = NSBundle.mainBundle().URLForResource("ScaryScream", withExtension: "wav")!
-        do { tune = try AVAudioPlayer(contentsOfURL: tuneURL, fileTypeHint: nil) } catch { print("file not found"); return }
-        tune.numberOfLoops = 1
-        tune.prepareToPlay()
-        tune.play()
-        //////////------------- //TODO doesnt working
-     
+        //Gif to be seen.
         self.view.addSubview(webViewBG)
         
-}
-
+        //Sound to be heard.
+        audioPlayer.play()
+        
+        
+    }
+    func prepareScaryGif(){
+        let filePath = NSBundle.mainBundle().pathForResource("scarryClown", ofType: ".gif")
+        let scarryGif = NSData(contentsOfFile: filePath!)
+//        webViewBG.backgroundColor = UIColor.blackColor()
+        webViewBG.loadData(scarryGif!, MIMEType: "image/gif", textEncodingName: String(), baseURL: NSURL())
+        webViewBG.userInteractionEnabled = false;
+    }
+    
+    func prepareScarySound(){
+        let scarySound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("scaryScream", ofType: "mp3")!)
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            try audioPlayer = AVAudioPlayer(contentsOfURL: scarySound, fileTypeHint: nil)
+            audioPlayer.prepareToPlay()
+        }catch{
+            print("probleeem")
+        }
+        
+    }
+    
     @IBAction func choosePhoto(sender: AnyObject) {
         let imagePickerFromLibrary = UIImagePickerController()
         imagePickerFromLibrary.delegate = self
@@ -82,7 +83,7 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
         imageView.image = image
         imageView.contentMode = .ScaleAspectFit
         self.dismissViewControllerAnimated(true, completion: nil)
-        view.backgroundColor = UIColor.blackColor()
+//        view.backgroundColor = UIColor.blackColor()
         chooseButton.hidden = true
     }
     
