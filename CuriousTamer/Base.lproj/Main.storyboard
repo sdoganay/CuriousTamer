@@ -378,9 +378,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circusBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bHo-f3-0Qo">
                                 <rect key="frame" x="161" y="433" width="240" height="128"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="453" placeholderIntrinsicHeight="202" layoutMarginsFollowReadableWidth="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="Will be added soon." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8d-xd-e1h">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="453" placeholderIntrinsicHeight="202" layoutMarginsFollowReadableWidth="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="Will be added soon." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8d-xd-e1h">
                                 <rect key="frame" x="74" y="235" width="453" height="202"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="i8d-xd-e1h" secondAttribute="height" multiplier="453:202" id="I6v-yI-Zt4"/>
                                     <constraint firstAttribute="width" secondItem="i8d-xd-e1h" secondAttribute="height" multiplier="453:202" id="ahW-B9-oT7"/>
                                     <constraint firstAttribute="height" constant="200" id="iwT-fU-FqY"/>
                                     <constraint firstAttribute="width" secondItem="i8d-xd-e1h" secondAttribute="height" multiplier="151:73" id="tyJ-YX-P87"/>
@@ -389,9 +390,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="ahW-B9-oT7"/>
                                         <exclude reference="iwT-fU-FqY"/>
                                         <exclude reference="tyJ-YX-P87"/>
-                                        <exclude reference="ahW-B9-oT7"/>
                                     </mask>
                                 </variation>
                             </textView>
