@@ -18,16 +18,26 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
     var leftSwipe : UISwipeGestureRecognizer!
     var rightSwipe : UISwipeGestureRecognizer!
     
-    
     @IBOutlet weak var chooseButton: UIButton!
     
     @IBOutlet weak var webViewBG: UIWebView!
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func handleLongPress(sender: UILongPressGestureRecognizer) {
+        audioPlayer.stop()
+        view.removeGestureRecognizer(longPressRecognizer)
+        print("longPressed")
+        self.performSegueWithIdentifier("longPressSegue", sender: self)
+        
+        
+    }
+   
+    @IBOutlet var longPressRecognizer: UILongPressGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        webViewBG.hidden = true
         leftSwipe = UISwipeGestureRecognizer(target:self, action: Selector("handleSwipes:"))
         leftSwipe.direction = .Left
         view.addGestureRecognizer(leftSwipe)
@@ -35,15 +45,19 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
         rightSwipe = UISwipeGestureRecognizer(target:self, action: Selector("handleSwipes:"))
         rightSwipe.direction = .Right
         view.addGestureRecognizer(rightSwipe)
+        
     }
     
     func handleSwipes(sender: UISwipeGestureRecognizer){
+        view.removeGestureRecognizer(rightSwipe)
+        view.removeGestureRecognizer(leftSwipe)
         imageView.hidden = true
         prepareScaryGif()
         prepareScarySound("scaryScream")
         
         //Gif to be seen.
         self.view.addSubview(webViewBG)
+        webViewBG.hidden = false
         audioPlayer.play()
         //Sound to be heard.
         
@@ -60,6 +74,9 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
                 self.prepareScarySound("evilLaugh")
                 self.audioPlayer.play()
                 self.popUpBustedMessage()
+                
+                self.view.addGestureRecognizer(self.longPressRecognizer)
+                
                 print("BUSTED")
             }
         }
@@ -68,28 +85,7 @@ class CameraRollController: UIViewController, UIImagePickerControllerDelegate, U
     
     func popUpBustedMessage(){
         let alert = UIAlertController(title: "YOU ARE BUSTED!", message: "What a shame! You were peeping some photos...", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK, you got me!", style: UIAlertActionStyle.Default, handler: {
-            action in
-            switch action.style{
-            case .Default:
-                print("default")
-                let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
-                dispatch_after(time, dispatch_get_main_queue()) {
-                    //ekran karart
-                    self.imageView.image = UIImage(named: "youFinger.png")
-                    
-                    //swipePassword
-                    print("swipePassword yerindeyim!")
-                    
-                }
-                
-            case .Cancel:
-                print("cancel")
-            case .Destructive:
-                print("destructive")
-            }
-        }))
-
+        alert.addAction(UIAlertAction(title: "OK, you got me!", style: UIAlertActionStyle.Default, handler: nil ))
         self.presentViewController(alert, animated: true, completion: nil)
         
         

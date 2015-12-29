@@ -259,11 +259,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView userInteractionEnabled="NO" contentMode="center" misplaced="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx6-B9-zVW">
-                                <rect key="frame" x="219" y="111" width="262" height="130"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                                <dataDetectorType key="dataDetectorTypes"/>
-                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-cU-an2">
+                                <rect key="frame" x="54" y="294" width="286" height="238"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-YE-36x">
                                 <rect key="frame" x="197" y="249" width="109" height="30"/>
                                 <constraints>
@@ -281,16 +279,18 @@
                                     <action selector="choosePhoto:" destination="J7t-cs-d6Q" eventType="touchUpInside" id="Bvl-pR-7Qx"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-cU-an2">
-                                <rect key="frame" x="54" y="294" width="286" height="238"/>
-                            </imageView>
+                            <webView userInteractionEnabled="NO" contentMode="center" misplaced="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx6-B9-zVW">
+                                <rect key="frame" x="219" y="111" width="262" height="130"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="height" secondItem="I8c-8g-i5x" secondAttribute="height" id="6LR-RD-o9O"/>
+                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="height" secondItem="I8c-8g-i5x" secondAttribute="height" priority="750" id="6LR-RD-o9O"/>
                             <constraint firstItem="Cx6-B9-zVW" firstAttribute="width" secondItem="I8c-8g-i5x" secondAttribute="width" id="E0X-FT-SlW"/>
-                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="centerY" secondItem="I8c-8g-i5x" secondAttribute="centerY" id="Kez-3w-5Py"/>
+                            <constraint firstItem="Cx6-B9-zVW" firstAttribute="centerY" secondItem="I8c-8g-i5x" secondAttribute="centerY" priority="750" constant="50" id="Kez-3w-5Py"/>
                             <constraint firstAttribute="trailing" secondItem="9uN-cU-an2" secondAttribute="trailing" constant="1" id="R9d-ax-L6F"/>
                             <constraint firstItem="9uN-cU-an2" firstAttribute="leading" secondItem="I8c-8g-i5x" secondAttribute="leading" constant="1" id="VUZ-Hn-lc6"/>
                             <constraint firstItem="9fX-YE-36x" firstAttribute="centerY" secondItem="I8c-8g-i5x" secondAttribute="centerY" id="aRU-q5-Pdp"/>
@@ -314,7 +314,9 @@
                     <connections>
                         <outlet property="chooseButton" destination="9fX-YE-36x" id="ddf-H3-YN4"/>
                         <outlet property="imageView" destination="9uN-cU-an2" id="lve-rS-U6T"/>
+                        <outlet property="longPressRecognizer" destination="gUG-zP-qp1" id="gX8-Yz-EIj"/>
                         <outlet property="webViewBG" destination="Cx6-B9-zVW" id="Wod-rQ-AXD"/>
+                        <segue destination="22b-Sc-FxL" kind="show" identifier="longPressSegue" id="xHH-jJ-U6e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6E-bc-it5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,8 +325,43 @@
                         <action selector="pinchResponder:" destination="J7t-cs-d6Q" id="9cn-pB-XDv"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="gUG-zP-qp1">
+                    <connections>
+                        <action selector="handleLongPress:" destination="J7t-cs-d6Q" id="oVf-OA-YUj"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="688" y="1135"/>
+            <point key="canvasLocation" x="121" y="1097"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hq9-vu-FZH">
+            <objects>
+                <viewController id="22b-Sc-FxL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I4T-Fs-iA1"/>
+                        <viewControllerLayoutGuide type="bottom" id="hUN-Nq-9hA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UkY-g1-y9v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="seeyou" translatesAutoresizingMaskIntoConstraints="NO" id="E1d-1M-sS0">
+                                <rect key="frame" x="12" y="168" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E1d-1M-sS0" firstAttribute="centerX" secondItem="UkY-g1-y9v" secondAttribute="centerX" id="6A6-u8-Ytk"/>
+                            <constraint firstItem="E1d-1M-sS0" firstAttribute="centerY" secondItem="UkY-g1-y9v" secondAttribute="centerY" id="QbI-md-ORL"/>
+                            <constraint firstItem="E1d-1M-sS0" firstAttribute="width" secondItem="UkY-g1-y9v" secondAttribute="width" id="iE3-Sw-R2a"/>
+                            <constraint firstItem="E1d-1M-sS0" firstAttribute="height" secondItem="UkY-g1-y9v" secondAttribute="height" id="zSG-cH-xpf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XsR-uY-0Qg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912" y="1203"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AFd-tg-5xR">
@@ -378,6 +415,7 @@
     </scenes>
     <resources>
         <image name="circusBackground" width="1701" height="1701"/>
+        <image name="seeyou" width="620" height="236"/>
         <image name="tentDown" width="1701" height="452"/>
         <image name="tentUp" width="1702" height="387"/>
     </resources>
