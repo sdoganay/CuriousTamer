@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +18,47 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright (c) 2015 sndoganay." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Nt-bT-qp7">
+                                <rect key="frame" x="160" y="488" width="281" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Nt-bT-qp7" secondAttribute="height" multiplier="142:15" id="JkV-IV-Nh4"/>
+                                    <constraint firstAttribute="width" secondItem="1Nt-bT-qp7" secondAttribute="height" multiplier="391:21" id="jXI-vO-fa4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JkV-IV-Nh4"/>
+                                        <exclude reference="jXI-vO-fa4"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sdoganay" translatesAutoresizingMaskIntoConstraints="NO" id="mLH-ME-vlH">
+                                <rect key="frame" x="30" y="483" width="35.5" height="29.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mLH-ME-vlH" secondAttribute="height" multiplier="57:49" id="Etr-Q0-G23"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tamerLogo_Transparent" translatesAutoresizingMaskIntoConstraints="NO" id="3WL-Uf-xbA">
+                                <rect key="frame" x="70" y="72" width="460" height="377"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3WL-Uf-xbA" firstAttribute="top" relation="lessThanOrEqual" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="75" id="0Ra-dH-FUJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3WL-Uf-xbA" secondAttribute="trailing" constant="50" id="8mF-Lr-gHU"/>
+                            <constraint firstItem="1Nt-bT-qp7" firstAttribute="leading" secondItem="mLH-ME-vlH" secondAttribute="trailing" constant="5" id="QRd-C5-4ps"/>
+                            <constraint firstItem="3WL-Uf-xbA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="50" id="Zps-4d-UJW"/>
+                            <constraint firstItem="3WL-Uf-xbA" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-40" id="bq2-P0-02j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Nt-bT-qp7" secondAttribute="trailing" constant="50" id="gUT-V0-cAy"/>
+                            <constraint firstItem="mLH-ME-vlH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="10" id="isc-Gg-pm5"/>
+                            <constraint firstItem="1Nt-bT-qp7" firstAttribute="top" secondItem="3WL-Uf-xbA" secondAttribute="bottom" constant="40" id="lif-ah-Lan"/>
+                            <constraint firstItem="3WL-Uf-xbA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oXh-2k-cg2"/>
+                            <constraint firstItem="1Nt-bT-qp7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qeI-lh-6H1"/>
+                            <constraint firstItem="mLH-ME-vlH" firstAttribute="centerY" secondItem="1Nt-bT-qp7" secondAttribute="centerY" id="siR-Oc-69W"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +66,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sdoganay" width="415" height="613"/>
+        <image name="tamerLogo_Transparent" width="452" height="377"/>
+    </resources>
 </document>
